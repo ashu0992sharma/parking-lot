@@ -1,8 +1,8 @@
-from create_parking_lot import ParkingLot
+from abs_parking import AbsParking
 from constants import PARKING_FULL_ERROR
 
 
-class Park:
+class Park(AbsParking):
     """Class to park a vehicle"""
     name = 'park'
 
@@ -19,7 +19,7 @@ class Park:
             'color': self.color
         }
 
-    def execute(self, parking_lot):
+    def execute(self, parking_lot=None):
         """executing park command"""
         for index, slot in enumerate(parking_lot.slots_availability):
             if slot:

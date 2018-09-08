@@ -1,11 +1,13 @@
 from create_parking_lot import ParkingLot
 from park import Park
 from leave import Leave
+from status import Status
+from slot_number_for_registration_number import SlotRegistrationNo
 from no_command import NoCommand
 
 
 def get_commands():
-    commands = (Park, Leave)
+    commands = (Park, Leave, Status, SlotRegistrationNo)
     return {cls.name: cls for cls in commands}
 
 

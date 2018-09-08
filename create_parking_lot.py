@@ -1,11 +1,9 @@
-import abc
+from abs_parking import AbsParking
 
 
-class ParkingLot:
+class ParkingLot(AbsParking):
     """Parking Lot class to create a Parking lot"""
     name = 'create_parking_lot'
-    slots_availability = []
-    slots = []
 
     def __init__(self, args):
         """
@@ -18,6 +16,5 @@ class ParkingLot:
         self.slots = [{}] * quantity
         print(f'Created a parking lot with {quantity} slots')
 
-    @abc.abstractmethod
-    def execute(self):
+    def execute(self, parking_lot=None):
         pass
