@@ -8,7 +8,10 @@ class ParkingLot:
     slots = []
 
     def __init__(self, args):
-        """"""
+        """
+        construction to initialize parking lot object
+        :param args: quantity of the slots in parking lot
+        """
         quantity = int(args[1])
         self.quantity = quantity
         self.slots_availability = [True] * quantity

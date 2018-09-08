@@ -7,6 +7,11 @@ class Park:
     name = 'park'
 
     def __init__(self, args):
+        """
+        constructor to initializing park object
+        :param args: 1. registration_no: registration_no of the vehicle
+        2. color: color of the vehicle
+        """
         self.registration_no = args[1]
         self.color = args[2]
         self.vehicle_detail = {
