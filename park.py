@@ -2,7 +2,7 @@ from create_parking_lot import ParkingLot
 from constants import PARKING_FULL_ERROR
 
 
-class Park(ParkingLot):
+class Park:
     """Class to park a vehicle"""
     name = 'park'
 
@@ -14,13 +14,13 @@ class Park(ParkingLot):
             'color': self.color
         }
 
-    def execute(self):
+    def execute(self, parking_lot):
         """executing park command"""
-        import pdb;pdb.set_trace()
-        for index, slot in enumerate(self.slots_availability):
+        for index, slot in enumerate(parking_lot.slots_availability):
             if slot:
-                self.slots_availability[index] = False
-                self.slots[index] = self.vehicle_detail
+                parking_lot.slots_availability[index] = False
+                parking_lot.slots[index] = self.vehicle_detail
+                print(f"Allocated slot number: {index+1}")
                 return
         print(PARKING_FULL_ERROR)
 

@@ -15,8 +15,12 @@ def parse_command(commands, args):
 
 commands = get_commands()
 
+args = input()
+# Find and execute the command
+parking_lot = ParkingLot(args.split())
+
 while True:
     args = input()
     # Find and execute the command
     command = parse_command(commands, args.split())
-    command.execute()
+    command.execute(parking_lot)

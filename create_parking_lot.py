@@ -13,6 +13,7 @@ class ParkingLot:
         self.quantity = quantity
         self.slots_availability = [True] * quantity
         self.slots = [{}] * quantity
+        print(f'Created a parking lot with {quantity} slots')
 
     @abc.abstractmethod
     def execute(self):
