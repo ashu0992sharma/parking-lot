@@ -1,4 +1,4 @@
-from src.abs_parking import AbsParking
+from abs_parking import AbsParking
 
 
 class CreateParkingLot(AbsParking):
@@ -7,7 +7,7 @@ class CreateParkingLot(AbsParking):
 
     def __init__(self, args):
         """
-        construction to initialize parking lot object
+        constructor to initialize parking lot object
         :param args: quantity of the slots in parking lot
         """
         quantity = int(args[1])

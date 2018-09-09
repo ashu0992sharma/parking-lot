@@ -1,12 +1,18 @@
-from src.create_parking_lot import CreateParkingLot
-from src.park import Park
-from src.leave import Leave
-from src.status import Status
-from src.slot_number_for_registration_number import SlotRegistrationNo
-from src.slot_numbers_for_cars_with_colour import SlotCarColor
-from src.registration_numbers_for_cars_with_colour import RegistrationNoColor
-from src.exit import Exit
-from src.no_command import NoCommand
+from create_parking_lot import CreateParkingLot
+from park import Park
+from leave import Leave
+from status import Status
+from slot_number_for_registration_number import SlotRegistrationNo
+from slot_numbers_for_cars_with_colour import SlotCarColor
+from registration_numbers_for_cars_with_colour import RegistrationNoColor
+from exit import Exit
+from no_command import NoCommand
+
+import sys
+import os
+
+
+sys.path.append(os.path.abspath(os.path.join('..', '..', 'parking_lot')))
 
 
 def get_commands():
@@ -23,7 +29,8 @@ def parse_command(commands, args):
 
 commands = get_commands()
 
-while True:
+if len(sys.argv) < 2:
+    # inputs from shell prompt
     args = input()
     # Find and execute the command
     parking_lot = parse_command(commands, args.split())
@@ -34,3 +41,16 @@ while True:
         # Find and execute the command
         command = parse_command(commands, args.split())
         command.execute(parking_lot)
+else:
+    # running inputs from a file
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(BASE_DIR, 'functional_spec', 'fixtures', sys.argv[1])
+    with open(file_path) as input_file:
+        args = input_file.readline().strip()
+        parking_lot = parse_command(commands, args.split())
+        parking_lot.execute()
+        for line in input_file:
+            args = line.strip()
+            command = parse_command(commands, args.split())
+            command.execute(parking_lot)
+

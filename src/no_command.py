@@ -1,4 +1,4 @@
-from src.abs_parking import AbsParking
+from abs_parking import AbsParking
 
 class NoCommand(AbsParking):
     def __init__(self, args):
