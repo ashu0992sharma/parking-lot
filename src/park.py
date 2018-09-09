@@ -1,5 +1,5 @@
-from abs_parking import AbsParking
-from constants import PARKING_FULL_ERROR
+from src.abs_parking import AbsParking
+from src.constants import PARKING_FULL_ERROR
 
 
 class Park(AbsParking):

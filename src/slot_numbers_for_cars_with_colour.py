@@ -1,4 +1,4 @@
-from abs_parking import AbsParking
+from src.abs_parking import AbsParking
 
 
 class SlotCarColor(AbsParking):
