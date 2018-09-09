@@ -1,7 +1,7 @@
 from src.abs_parking import AbsParking
 
 
-class ParkingLot(AbsParking):
+class CreateParkingLot(AbsParking):
     """Parking Lot class to create a Parking lot"""
     name = 'create_parking_lot'
 

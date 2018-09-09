@@ -1,3 +1,6 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join('..', '..', 'parking_lot')))
+
 from src.create_parking_lot import CreateParkingLot
 
 import unittest
@@ -17,20 +20,20 @@ class CreateParkingLotTest(unittest.TestCase):
 
     def test_create_parking_lot_quantity(self):
         """test for parking slots quantity"""
-        assert (self.parking_lot1.quantity, 6)
-        assert (self.parking_lot2.quantity, 7)
-        assert (self.parking_lot3.quantity, 3)
+        assert self.parking_lot1.quantity == 6
+        assert self.parking_lot2.quantity == 7
+        assert self.parking_lot3.quantity == 3
 
     def test_create_parking_lot_slots_availability(self):
         """test for  slots availability"""
-        assert (self.parking_lot1.slots_availability, [True]*6)
-        assert (self.parking_lot2.slots_availability, [True] * 7)
-        assert (self.parking_lot3.slots_availability, [True] * 3)
+        assert self.parking_lot1.slots_availability == [True] * 6
+        assert self.parking_lot2.slots_availability == [True] * 7
+        assert self.parking_lot3.slots_availability == [True] * 3
 
     def test_slots_vehicle_details(self):
         """test for vehicle details"""
-        assert (self.parking_lot1.slots, [{}]*6)
-        assert (self.parking_lot2.slots, [{}] * 7)
-        assert (self.parking_lot3.slots, [{}] * 3)
+        assert self.parking_lot1.slots == [{}] * 6
+        assert self.parking_lot2.slots == [{}] * 7
+        assert self.parking_lot3.slots == [{}] * 3
 
 

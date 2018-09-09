@@ -1,4 +1,4 @@
-from src.create_parking_lot import ParkingLot
+from src.create_parking_lot import CreateParkingLot
 from src.park import Park
 from src.leave import Leave
 from src.status import Status
@@ -10,7 +10,9 @@ from src.no_command import NoCommand
 
 
 def get_commands():
-    commands = (ParkingLot, Park, Leave, Status, SlotRegistrationNo, SlotCarColor, RegistrationNoColor, Exit)
+    commands = (CreateParkingLot, Park, Leave, Status,
+                SlotRegistrationNo, SlotCarColor,
+                RegistrationNoColor, Exit)
     return {cls.name: cls for cls in commands}
 
 
