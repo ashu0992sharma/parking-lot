@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd tests
-python -m unittest
+python -m unittest $1
 cd ..

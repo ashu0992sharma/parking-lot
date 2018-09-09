@@ -1,6 +1,9 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join('..', '..', 'parking_lot')))
+sys.path.append(os.path.abspath(os.path.join('..', '..', 'parking_lot/src')))
+
 from src.park import Park
 from src.create_parking_lot import CreateParkingLot
-
 
 import unittest
 
