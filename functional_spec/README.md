@@ -1,13 +1,3 @@
-# Functional Suite
-
-`functional_spec/` contains the Rspec/Aruba based automated testing suite that will validate the correctness of your program for the sample input and output.
-
-Please to add specs as needed when building your solution.
-
-We do not support Windows at this point in time. If you don't have access to an OSX or Linux machine, we recommend  setting up a Linux machine you can develop against using something like [VirtualBox](https://www.virtualbox.org/) or [Docker](https://docs.docker.com/docker-for-windows/#test-your-installation).
-
-This needs [Ruby to be installed](https://www.ruby-lang.org/en/documentation/installation/), followed by some libraries. The steps are listed below.
-
 ## Setup
 
 First, install [Python3.x](https://www.python.org/downloads/). Then run the following commands under the `functional_spec` dir.
@@ -20,17 +10,51 @@ Python 3.x
 
 ## Usage
 
-You can run the full suite from `parking_lot` by doing
+run application from `parking_lot` by doing
+
+
 ```
-parking_lot $ bin/run_functional_specs
+parking_lot $ bin/parking_lot
+```
+this will open a shell prompt which has commands like
+
+```
+create_parking_lot 6
+park KA-01-HH-1234 White
+park KA-01-HH-9999 White
+park KA-01-BB-0001 Black
+park KA-01-HH-7777 Red
+park KA-01-HH-2701 Blue
+park KA-01-HH-3141 Black
+leave 4
+status
+park KA-01-P-333 White
+park DL-12-AA-9999 White
+registration_numbers_for_cars_with_colour White
+slot_numbers_for_cars_with_colour White
+slot_number_for_registration_number KA-01-HH-3141
+slot_number_for_registration_number MH-04-AY-1111
+```
+also application can be given a file as input which should be present
+ in parking_lot/fixtures directory
+ 
+ ```
+parking_lot $ bin/parking_lot file_input.txt
 ```
 
-You can run the full suite directly from `parking_lot/functional_spec` by doing
+
+## Tests
+
+
+run all tests from `parking_lot` by doing
 ```
-parking_lot/functional_spec $ bundle exec rake spec:functional
+parking_lot $ bin/setup
 ```
 
-You can run a specific test from `parking_lot/functional_spec` by providing the spec file and line number. In this example we're running the `can create a parking lot` test.
+run a single test from `parking_lot` by giving a system argument 
+e.g in below case we want to test for leaving a parking slot
+
 ```
-parking_lot/functional_spec $ PATH=$PATH:../bin bundle exec rspec spec/parking_lot_spec.rb:5
+parking_lot $ bin/setup test_leave
 ```
+

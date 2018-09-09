@@ -17,4 +17,4 @@ class Status(AbsParking):
         print("Slot No. Registration No Colour")
         for index, slot in enumerate(parking_lot.slots):
             if slot:
-                print(f"{index+1}   {slot['registration_no']}   {slot['color']}")
+                print(f"{index+1}\t{slot['registration_no']}\t{slot['color']}")
