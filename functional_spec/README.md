@@ -7,6 +7,18 @@ functional_spec $ python -version # confirm Python present
 Python 3.x
 
 ```
+install virtualenv
+```
+pip install virtualenv
+```
+create virtual environment to keep the dependencies
+```
+parking_lot $ virtualenv env
+parking_lot $ pip install -r requirements.txt
+
+```
+since there is no external library used we can skip installing virtualenv
+for this application. 
 
 ## Usage
 
